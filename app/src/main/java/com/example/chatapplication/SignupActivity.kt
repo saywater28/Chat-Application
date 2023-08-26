@@ -56,14 +56,14 @@ class SignupActivity : AppCompatActivity() {
                     startActivity(intent)
 
                 } else {
-                    Toast.makeText(this@SignupActivity, "Some error occured", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@SignupActivity, "Some error occurred", Toast.LENGTH_SHORT).show()
                 }
             }
 
     }
 
     private fun addUserToDatabase(name: String, email: String, uid: String?) {
-        mDbRef = FirebaseDatabase.getInstance().getReference()
+        mDbRef = FirebaseDatabase.getInstance().reference
 
         if (uid != null) {
             mDbRef.child("user").child(uid).setValue(User(name, email, uid))
